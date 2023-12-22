@@ -8,4 +8,6 @@ public class TeacherSandbox {
     static void doSomething() {
         System.out.println("Hello there!");
     }
+
+    /// комментарий
 }

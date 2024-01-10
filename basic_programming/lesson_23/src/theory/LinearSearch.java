@@ -41,7 +41,7 @@ public class LinearSearch {
 
         // заполняем массив лишь уникальными элементами, повторяем до тех пор, пока не будет полностью заполнен
         while (size < arrayLength){
-            int randomNumber = random.nextInt(0, 1001);
+            int randomNumber = random.nextInt(0, arrayLength + 1);
             if (!arrayList.contains(randomNumber)) {
                 arrayList.add(randomNumber);
                 size = arrayList.size(); // эквивалентно size++;

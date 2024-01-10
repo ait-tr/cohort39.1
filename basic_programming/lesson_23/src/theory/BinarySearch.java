@@ -5,8 +5,8 @@ import java.util.Random;
 
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] array = createSortedArray(1000);
-        int element = 12;
+        int[] array = createSortedArray(100_000_000);
+        int element = -31_466_239;
 
         // System.nanoTime() - возвращает текщее время в наносекнудах
         long startSearching = System.nanoTime();
@@ -35,7 +35,7 @@ public class BinarySearch {
 
             // проверка, что середина является элементом, который ищем
             if (arr[mid] == target) {
-                System.out.printf("Элемент найден. На поиск элемента затрачено %d шагов\n", steps);
+                //System.out.printf("Элемент найден. На поиск элемента затрачено %d шагов\n", steps);
                 return mid;
             }
 
@@ -50,11 +50,15 @@ public class BinarySearch {
             steps++;
         }
 
-        System.out.printf("Элемент не был найден. На поиск элемента затрачено %d шагов\n", steps);
+        //System.out.printf("Элемент не был найден. На поиск элемента затрачено %d шагов\n", steps);
 
         // If element is not present in array
         return -1;
     }
+
+
+    // 1, 2, 4, 4, 4, 5, 6, 6, 7, 8, 8, 8
+
 
     private static int[] createSortedArray(int arrayLength) {
         int[] array = new int[arrayLength];

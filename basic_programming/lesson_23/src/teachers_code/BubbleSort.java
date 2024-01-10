@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class BubbleSort {
 
     public static void main(String[] args) {
-        int arr[] = {100, 23, 45, 2, 6, -343, 66, -4, 1, 56, 90};
+        int arr[] = {100, 23, 45, 2, 6, -343, 66, -4, 1, 56, 90, 100};
 
         int step = 0;
         // n^2
@@ -34,5 +34,8 @@ public class BubbleSort {
         }
 
         System.out.println(Arrays.toString(arr));
+        String format = "Для сортировки массива длинно %d, затрачено %d шагов\n";
+
+        System.out.printf(format, arr.length, step);
     }
 }

@@ -8,7 +8,7 @@ import java.util.Set;
 public class LinearSearch {
 
     public static void main(String[] args) {
-        Integer[] array = createRandomNotSortedArray(100_000);
+        Integer[] array = createRandomNotSortedArray(1_000);
         int element = -12;
 
         // System.nanoTime() - возвращает текщее время в наносекнудах
@@ -32,6 +32,12 @@ public class LinearSearch {
         int index = -1; // если элемента нет в массиве
 
         // реализация линейного поиска
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == element) {
+                return i;
+            }
+        }
 
         return index;
     }

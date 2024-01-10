@@ -1,0 +1,38 @@
+package teachers_code;
+
+import java.util.Arrays;
+
+public class BubbleSort {
+
+    public static void main(String[] args) {
+        int arr[] = {100, 23, 45, 2, 6, -343, 66, -4, 1, 56, 90};
+
+        int step = 0;
+        // n^2
+        // 100, 1, 2, 4
+
+        // временная сложность от n, когда массив отсортирован, до ±n^2, когда массив не отсортирован
+        for (int i = 0; i < arr.length -1; i++) {
+            int lastIndexForJ = arr.length -1;
+            //boolean isSorted = true;
+
+            for (int j = 0; j < lastIndexForJ; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+            //        isSorted = false;
+                }
+                step++;
+            }
+//
+//            if (isSorted) {
+//                break;
+//            }
+//            lastIndexForJ--;
+        }
+
+        System.out.println(Arrays.toString(arr));
+    }
+}

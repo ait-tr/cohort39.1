@@ -28,11 +28,14 @@ public class BinarySearch {
         int left = 0;
         int right = arr.length - 1;
 
+        int steps = 0;
+
         while (left <= right) {
             int mid = left + (right - left) / 2;
 
             // проверка, что середина является элементом, который ищем
             if (arr[mid] == target) {
+                System.out.printf("Элемент найден. На поиск элемента затрачено %d шагов\n", steps);
                 return mid;
             }
 
@@ -44,7 +47,10 @@ public class BinarySearch {
             else {
                 right = mid - 1;
             }
+            steps++;
         }
+
+        System.out.printf("Элемент не был найден. На поиск элемента затрачено %d шагов\n", steps);
 
         // If element is not present in array
         return -1;

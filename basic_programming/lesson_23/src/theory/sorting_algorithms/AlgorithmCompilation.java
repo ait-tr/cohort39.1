@@ -6,10 +6,13 @@ public class AlgorithmCompilation {
     private static int[] staticArr;
 
     public static void main(String[] args) {
-        generateRandomArray(100);
+        generateRandomArray(10000);
 
-        Sorting[] sortings = {new BubbleSort(), new HeapSort(), new InsertionSort(), new MergeSort(), new QuickSort(),
-                new SelectionSort(), new ShellSort()};
+        Sorting[] sortings = {new BubbleSort(), new ShellSort(), new HeapSort(), new InsertionSort(), new MergeSort(),
+                new QuickSort(),
+                new SelectionSort()};
+
+        System.out.println(Arrays.toString(staticArr));
 
         for (Sorting sorting : sortings) {
             sort(sorting);

@@ -17,7 +17,8 @@ public class TeacherCode {
     }
 
     // time capacity = from O(1) to O(n)
-    // space capacity = O(n) тк мы увеличиваем размер массива factorialValues
+    // space capacity (heap) = O(n) тк мы увеличиваем размер массива factorialValues
+    // space capacity (stack) = O(1)
     public static int cacheFactorialIterative(int number) {
         if (number < 0) {
             return -1;

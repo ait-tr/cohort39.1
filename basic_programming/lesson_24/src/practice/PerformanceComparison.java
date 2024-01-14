@@ -5,6 +5,7 @@ public class PerformanceComparison {
     public static void main(String[] args) {
         int number = 100; // Выберите число для вычисления факториала. Будьте осторожны с большими числами, так как это может привести к переполнению стека в рекурсивном методе.
 
+
         // Измерение времени для итеративного метода
         long startTime = System.nanoTime();
         long iterativeResult = factorialIterative(number);
@@ -13,13 +14,16 @@ public class PerformanceComparison {
 
         System.out.println("Итеративный метод: " + iterativeResult + ", Время выполнения: " + durationIterative + " наносекунд");
 
+
+
         // Измерение времени для рекурсивного метода
-        startTime = System.nanoTime();
+        long startTimeR = System.nanoTime();
         long recursiveResult = factorialRecursive(number);
-        endTime = System.nanoTime();
-        long durationRecursive = endTime - startTime;
+        long endTimeR = System.nanoTime();
+        long durationRecursive = endTimeR - startTimeR;
 
         System.out.println("Рекурсивный метод: " + recursiveResult + ", Время выполнения: " + durationRecursive + " наносекунд");
+
     }
 
     public static long factorialRecursive(int n) {

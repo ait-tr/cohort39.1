@@ -4,6 +4,6 @@ package practice;
 // когда пытаемся установить некорректное значение для этажа в здании
 public class IncorrectFloorNumberException extends Exception {
     public IncorrectFloorNumberException(String message) {
-        super(message);
+        super("IncorrectFloorNumberException: " + message);
     }
 }

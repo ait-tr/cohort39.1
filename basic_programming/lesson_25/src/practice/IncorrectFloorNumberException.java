@@ -6,4 +6,6 @@ public class IncorrectFloorNumberException extends Exception {
     public IncorrectFloorNumberException(String message) {
         super("IncorrectFloorNumberException: " + message);
     }
+
+
 }

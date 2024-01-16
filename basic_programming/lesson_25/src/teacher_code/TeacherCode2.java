@@ -19,7 +19,7 @@ public class TeacherCode2 {
         try {
             setFloor(13);
         } catch (IncorrectFloorNumberException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
 
         System.out.println("Работа завершена");

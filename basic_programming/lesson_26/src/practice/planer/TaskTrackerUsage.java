@@ -2,7 +2,27 @@ package practice.planer;
 
 public class TaskTrackerUsage {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws TaskException {
+        Tasks<Task> taskListMonday = new Tasks<>();
+        taskListMonday.addTask(new Task("сходить на урок Java Basic"));
+        taskListMonday.addTask(new Task("убраться дома"));
+
+        Tasks<Task> taskListTuesday = new Tasks<>();
+        taskListTuesday.addTask(new Task("Выполнить домашку аит"));
+        taskListTuesday.addTask(new Task("дописать тесты для приложения"));
+
+        TaskTrackerPair <String, Tasks<Task>> planner = new TaskTrackerPair<>();
+
+        planner.setPair("Monday", taskListMonday);
+        planner.setPair("Tuesday", taskListTuesday);
+
+        System.out.println(planner.getValue("Monday").toString());
+
+
+
+    }
+
+    public static void usageWithTask() {
         Tasks<Task> taskList = new Tasks<>();
 
         System.out.println(taskList.toString());

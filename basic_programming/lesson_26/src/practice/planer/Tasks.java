@@ -56,4 +56,11 @@ public class Tasks<T> {
 
         return -1;
     }
+
+    @Override
+    public String toString() {
+        return "Tasks{" +
+                "array=" + Arrays.toString(array) +
+                '}';
+    }
 }

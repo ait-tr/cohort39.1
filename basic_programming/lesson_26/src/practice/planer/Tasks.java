@@ -43,6 +43,14 @@ public class Tasks<T> {
         array = temp;
     }
 
+    public T get(int index) {
+        if (index < 0 || index >= array.length ) {
+            throw new IndexOutOfBoundsException("Индекс " + index + " имеет некорректное значение для массива длинной "
+                    + array.length);
+        }
+        return array[index];
+    }
+
     public boolean contain(T t) {
         return getFirstIndex(t) != -1;
     }

@@ -23,8 +23,10 @@ public class Tasks<T> {
 
     // метод удаления элемента из массива с сокращением размера массива
     public void removeTask(T t) throws TaskException {
-        if (!contain(t)) {
-            throw new TaskException("данной задачи нет в списке дел!");
+        int index = getFirstIndex(t);
+
+        if (index == -1) {
+            throw new TaskException("данной записи нет в списке!");
         }
 
 
@@ -32,12 +34,16 @@ public class Tasks<T> {
     }
 
     public boolean contain(T t) {
+        return getFirstIndex(t) != -1;
+    }
+
+    public int getFirstIndex(T t) {
         for (int i = 0; i < array.length; i++) {
             if (array[i].equals(t)) {
-                return true;
+                return i;
             }
         }
 
-        return false;
+        return -1;
     }
 }

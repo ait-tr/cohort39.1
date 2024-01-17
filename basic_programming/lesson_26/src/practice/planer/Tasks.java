@@ -29,8 +29,18 @@ public class Tasks<T> {
             throw new TaskException("данной записи нет в списке!");
         }
 
+        array[index] = null;
+        T[] temp = (T[]) new Object[array.length - 1];
 
+        for (int i = 0; i < temp.length; i++) {
+            if (i < index) {
+                temp[i] = array[i];
+            } else {
+                temp[i] = array[i + 1];
+            }
+        }
 
+        array = temp;
     }
 
     public boolean contain(T t) {

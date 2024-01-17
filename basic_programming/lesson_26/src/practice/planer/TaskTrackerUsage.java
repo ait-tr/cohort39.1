@@ -13,6 +13,11 @@ public class TaskTrackerUsage {
         taskList.addTask(new Task("дописать тесты для приложения"));
 
         System.out.println(taskList.toString());
+
+        taskList.get(1).changeTaskStatus();
+
+        System.out.println(taskList.toString());
+
     }
 
     public static void usageWithString() {

@@ -27,9 +27,9 @@ public class Task {
     @Override
     public String toString() {
         if (isDone) {
-            return "Задача: " + description + " выполнена";
+            return "Задача выполнена: " + description;
         } else {
-            return "Задача: " + description + " выполнена";
+            return "Задача не выполнена: " + description;
         }
     }
 

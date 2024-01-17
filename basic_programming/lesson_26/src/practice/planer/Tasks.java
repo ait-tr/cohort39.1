@@ -59,8 +59,14 @@ public class Tasks<T> {
 
     @Override
     public String toString() {
-        return "Tasks{" +
-                "array=" + Arrays.toString(array) +
-                '}';
+        if (array.length == 0) {
+            return " - список пуст";
+        }
+        StringBuilder builder = new StringBuilder("Tasks:");
+        for (int i = 0; i < array.length; i++) {
+            builder.append("\n - " + array[i].toString());
+        }
+
+        return builder.toString();
     }
 }

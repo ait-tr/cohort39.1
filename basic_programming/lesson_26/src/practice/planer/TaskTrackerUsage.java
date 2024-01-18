@@ -17,9 +17,6 @@ public class TaskTrackerUsage {
         planner.setPair("Tuesday", taskListTuesday);
 
         System.out.println(planner.getValue("Monday").toString());
-
-
-
     }
 
     public static void usageWithTask() {

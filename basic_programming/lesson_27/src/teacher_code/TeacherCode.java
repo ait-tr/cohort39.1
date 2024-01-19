@@ -7,9 +7,10 @@ public class TeacherCode {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
 
-        ArrayList<String> stringArrayList = new ArrayList<>(1000);
+        ArrayList<String> stringArrayList = new ArrayList<>(6); // {null, null, null, null,null, null} size = 0
 
-        stringArrayList.add("one");
+        stringArrayList.add(null); //  size = 1 {null, null, null, null, null, null}
+        stringArrayList.add("one"); // size = 2 {null, one, null, null, null, null}
         stringArrayList.add("two");
         stringArrayList.add("three");
 
@@ -17,10 +18,7 @@ public class TeacherCode {
         //   0     1     2
         stringArrayList.get(1);
 
-        for (int i = 0; i < stringArrayList.size(); i++) {
-            System.out.print(stringArrayList.get(i) + " ");
-        }
-        System.out.println();
+        printArray(stringArrayList);
 
         stringArrayList.add(null);
 
@@ -41,13 +39,48 @@ public class TeacherCode {
 
         stringArrayList.addAll(immutableArrayList);
 
+        printArray(stringArrayList);
+
+        stringArrayList.add(2 , "seven");
+
+        printArray(stringArrayList);
+
+        stringArrayList.set(2 , "eight");
+
+        printArray(stringArrayList);
+
+        stringArrayList.remove( 3);
+
+        printArray(stringArrayList);
+
+        stringArrayList.add(2 , "four");
+        stringArrayList.add(2 , "four");
+        stringArrayList.add(2 , "four");
+
+        printArray(stringArrayList);
+
+        stringArrayList.remove("four");
+
+        printArray(stringArrayList);
 
 
-        for (int i = 0; i < stringArrayList.size(); i++) {
-            System.out.print(stringArrayList.get(i) + " ");
+        // удаляет все элементы, содержащиеся в immutableArrayList из stringArrayList
+        try {
+            stringArrayList.removeAll(immutableArrayList);
+        } catch (NullPointerException e) {
+            System.out.println("данная операция работает только если в коллекйии нет значений null");
+        }
+
+        printArray(stringArrayList);
+
+        System.out.println("stringArrayList.contains(\"four\") = " + stringArrayList.contains("four"));
+    }
+
+    static void printArray (ArrayList list) {
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i) + " ");
         }
         System.out.println();
-
     }
 
 }

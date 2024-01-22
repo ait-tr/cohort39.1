@@ -41,23 +41,25 @@ public class TeacherCode {
     static void tryLinkedNode() {
         Scanner scanner = new Scanner(System.in);
 
-        NodeExample first = new NodeExample();
-        NodeExample temp = new NodeExample();
+        NodeExample first = new NodeExample(12); // @link1  first data = 12, next = null,
+        NodeExample temp = new NodeExample(15); //  @link2  temp  data = 15, next = null,
 
-        first.next = temp; // first (0) -> temp (0) -> null
+        first.next = temp; // first data = 12, next = @link2,
+
+
 
         while (scanner.hasNextInt()) {
-            NodeExample scannerNode = new NodeExample(scanner.nextInt());
-            temp.next = scannerNode;
+            NodeExample scannerNode = new NodeExample(scanner.nextInt()); // @link234  data = scanner.nextInt() next = null
+            temp.next = scannerNode; // /  @link2  temp  data = 15, next = @link234
+            temp = scannerNode; // @link234   temp  data = scanner.nextInt() next = null
         }
 
-        temp = first;
-        while (temp.next != null) {
-            System.out.println(temp.data);
+        temp = first; //
+
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
-
-
     }
 
 }

@@ -6,9 +6,6 @@ import java.util.Scanner;
 
 public class TeacherCode {
     public static void main(String[] args) {
-
-
-
         ArrayList<Integer> list = new ArrayList<>();
 
         list.add(1);
@@ -45,8 +42,6 @@ public class TeacherCode {
         NodeExample temp = new NodeExample(15); //  @link2  temp  data = 15, next = null,
 
         first.next = temp; // first data = 12, next = @link2,
-
-
 
         while (scanner.hasNextInt()) {
             NodeExample scannerNode = new NodeExample(scanner.nextInt()); // @link234  data = scanner.nextInt() next = null

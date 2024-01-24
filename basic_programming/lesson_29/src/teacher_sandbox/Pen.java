@@ -1,0 +1,75 @@
+package teacher_sandbox;
+
+// класс, характеризующий ручку, для практики методов equals и hashCode
+public class Pen {
+    // тип ручки - вложенный энам, может быть шариковой или перьевой
+    private TypeOfDrawing typeOfDrawing;
+    // цвет чернил ручки
+    private String inkColor;
+    // характеристика ручки - может писать или нет
+    private boolean canDraw;
+
+    public Pen(TypeOfDrawing typeOfDrawing, String inkColor, boolean canDraw) {
+        this.typeOfDrawing = typeOfDrawing;
+        this.inkColor = inkColor;
+        this.canDraw = canDraw;
+    }
+
+    private void draw(){
+        if (canDraw) {
+            System.out.println("drawing");
+        } else {
+            throw new RuntimeException("Pen cant draw!");
+        }
+    }
+
+    public TypeOfDrawing getTypeOfDrawing() {
+        return typeOfDrawing;
+    }
+
+    public String getInkColor() {
+        return inkColor;
+    }
+
+    public void setInkColor(String inkColor) {
+        this.inkColor = inkColor;
+    }
+
+    public boolean isCanDraw() {
+        return canDraw;
+    }
+
+    public void setCanDraw(boolean canDraw) {
+        this.canDraw = canDraw;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (!(o instanceof Pen) || o == null) {
+            return false;
+        }
+
+        Pen pen = (Pen) o;
+
+        if (this.canDraw != pen.canDraw) return false;
+        if (this.typeOfDrawing != pen.typeOfDrawing) return false;
+        return this.inkColor.equals(pen.inkColor);
+    }
+
+    @Override
+    public String toString() {
+        return "Pen{" +
+                "typeOfDrawing=" + typeOfDrawing +
+                ", inkColor='" + inkColor + '\'' +
+                ", canDraw=" + canDraw +
+                '}';
+    }
+
+    private enum TypeOfDrawing {
+        BALLPOINT, INK;
+    }
+}

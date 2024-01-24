@@ -61,6 +61,18 @@ public class Pen {
     }
 
     @Override
+    public int hashCode() {
+        int result = 0;
+        int colorHashCode = inkColor.hashCode();
+        int typeHashCode = typeOfDrawing.hashCode();
+        int canDrawHashCode = Boolean.valueOf(canDraw).hashCode();
+
+        result = 31 * colorHashCode + 31 * typeHashCode + 31 * canDrawHashCode;
+
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "Pen{" +
                 "typeOfDrawing=" + typeOfDrawing +
@@ -68,6 +80,8 @@ public class Pen {
                 ", canDraw=" + canDraw +
                 '}';
     }
+
+
 
     private enum TypeOfDrawing {
         BALLPOINT, INK;

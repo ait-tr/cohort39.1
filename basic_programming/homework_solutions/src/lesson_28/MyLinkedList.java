@@ -1,4 +1,4 @@
-package main.code.practice;
+package lesson_28;
 
 import java.util.List;
 

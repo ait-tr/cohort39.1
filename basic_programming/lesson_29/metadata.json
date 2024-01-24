@@ -3,10 +3,8 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "src/main/code/practice/MyLinkedList.java",
-    "src/main/code/practice/MyLinkedListImpl.java",
-    "src/main/code/practice/House.java",
-    "src/main/code/practice/SetPractice.java"
+    "src/practice/House.java",
+    "src/practice/SetPractice.java"
   ],
   "video": ""
 }

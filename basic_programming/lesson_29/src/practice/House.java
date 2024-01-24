@@ -1,4 +1,4 @@
-package main.code.practice;
+package practice;
 
 // данный класс создан для практики HashCode, equals на примере конструкций, которые их используют - HashSet и HashMap
 // описывает жилое пространство, где:

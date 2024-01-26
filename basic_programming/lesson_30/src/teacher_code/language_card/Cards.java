@@ -11,10 +11,9 @@ import java.util.Scanner;
  * значения.
  */
 public class Cards {
-    private HashMap<String, String> words;
+    private HashMap<String, String> words = new HashMap<>();
     private static Scanner scanner = new Scanner(System.in);
     private HashSet<String> incorrectWords = new HashSet<>();
-
 
     public void start() {
         boolean continueWorking = true;
@@ -97,14 +96,14 @@ public class Cards {
 
         // в случае, если такой ключ уже существует, а значение отличвется,
         // то мы просим пользователя подтвердиь ввод:
-        if (words.containsKey(key) && !value.equals(words.get(key))) {
+        if (!words.containsKey(key)) {
+            words.put(key, value);
+        } else if (words.containsKey(key) && !value.equals(words.get(key))) {
             System.out.println("Карточка с таким словом уже существует, и меет альтернативный перевод: " +
                     words.get(key) + ". Хотите ли вы заменить занную карточку новым значением? да/нет");
             if ("да".equalsIgnoreCase(scanner.nextLine())) {
                 words.put(key, value);
             }
-        } else {
-            words.put(key, value);
         }
     }
 

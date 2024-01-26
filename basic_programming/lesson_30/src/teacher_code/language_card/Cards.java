@@ -15,6 +15,49 @@ public class Cards {
     private static Scanner scanner = new Scanner(System.in);
     private HashSet<String> incorrectWords = new HashSet<>();
 
+
+    public void start() {
+        boolean continueWorking = true;
+        W: while (continueWorking) {
+            System.out.println("Введите номер операции:\n" +
+                    "1. Добавить новые слова\n" +
+                    "2. Практика всех слов\n" +
+                    "3. Практика сложных слов\n" +
+                    "4. Добавление сложных слов\n" +
+                    "5. Удаление карточек\n" +
+                    "0. Выход из приложения");
+
+            String command = scanner.nextLine();
+
+            switch (command) {
+                case "1":
+                    addNewWords();
+                    break;
+                case "2":
+                    checkKnowledge();
+                    break;
+                case "3":
+                    checkDifficultWords();
+                    break;
+                case "4":
+                    addWordToIncorrectSet();
+                    break;
+                case "5":
+                    removeCards();
+                    break;
+                case "0":
+                    System.out.println("Спасибо за использование, до свидания!");
+                    // способы остановить приложение:
+                    // continueWorking = false; - использование булеевого флага
+                    // return; - остановка всего метода
+                    // System.exit(0); - остановка всего приложения
+                    break W; // - остановка цикла, помеченного буквой 'W'
+                default:
+                    System.out.println("Некорректный ввод, попробуйте еще раз");
+            }
+        }
+    }
+
     public void addNewWords() {
         while (true) {
             addNewWord();
@@ -23,6 +66,26 @@ public class Cards {
                 break;
             }
         }
+    }
+
+    public void removeCards() {
+        while (true) {
+            removeCard();
+            System.out.println("Хотите ли удалить еще одну пару слов? да/нет");
+            if ("нет".equalsIgnoreCase(scanner.nextLine().trim())) {
+                break;
+            }
+        }
+    }
+
+    public void removeCard() {
+        // подумать над логикой удаления слов, которых нет
+        System.out.println("Введите слово, которое хотите удалить из карточек:");
+        String key = scanner.nextLine().trim().toUpperCase();
+        words.remove(key);
+
+        if (incorrectWords.contains(key))
+            incorrectWords.remove(key);
     }
 
     private void addNewWord() {
@@ -88,7 +151,6 @@ public class Cards {
         System.out.println("Введите слово, которое вы хотите чаще практиковать:");
         String key = scanner.nextLine().trim().toUpperCase();
         incorrectWords.add(key);
-
     }
 
 }

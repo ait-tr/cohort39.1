@@ -50,8 +50,45 @@ public class Cards {
             System.out.println("Пожалуйста введите перевод для слова " + key);
             String answer = scanner.nextLine().trim().toUpperCase();
 
-
+            // проеврка ответа
+            if (answer.equalsIgnoreCase(words.get(key))) {
+                System.out.println("Ответ верный!");
+            } else {
+                incorrectWords.add(key);
+            }
         }
+    }
+
+    public void checkDifficultWords(){
+        System.out.println("Начинаем повторение сложных слов:");
+        for (String key : incorrectWords) {
+            System.out.println("Пожалуйста введите перевод для слова " + key);
+            String answer = scanner.nextLine().trim().toUpperCase();
+
+            // проверка ответа
+            if (answer.equalsIgnoreCase(words.get(key))) {
+                System.out.println("Ответ верный! Хотите ли вы оставить это слово для повторной проверки в списке " +
+                        "сложных слов или удалить из этого списка? удалить/оставить");
+
+                if ("удалить".equalsIgnoreCase(scanner.nextLine().trim())) {
+                    incorrectWords.remove(key);
+
+                    if (incorrectWords.contains(key)) {
+                        System.out.println("произошла ошибка удаления");
+                    }
+                } else {
+                    System.out.println("Слово " + key + " все еще оставлено в списке сложных слов");
+                }
+            }
+        }
+    }
+
+    public void addWordToIncorrectSet() {
+        // подумать над логикой добавления слова, которого пока нет в мапе:
+        System.out.println("Введите слово, которое вы хотите чаще практиковать:");
+        String key = scanner.nextLine().trim().toUpperCase();
+        incorrectWords.add(key);
+
     }
 
 }

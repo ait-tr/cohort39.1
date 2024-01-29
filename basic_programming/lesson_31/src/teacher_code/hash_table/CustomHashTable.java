@@ -1,6 +1,7 @@
 package teacher_code.hash_table;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 
 /**
@@ -9,11 +10,72 @@ import java.util.LinkedList;
  *  лежащих в основе таких популярных структур данных, как HashSet и HashMap.
  */
 public class CustomHashTable {
-
-    private ArrayList <LinkedList<Movie>> table = new ArrayList<>();
+    private static int countOfBucket = 16;
+    private ArrayList <LinkedList<Movie>> table = new ArrayList<>(countOfBucket);
+    private int size = 0;
 
     public CustomHashTable() {
     }
 
+    public boolean contains(Movie movie) {
+        int movieHash = movie.hashCode();
 
+        // определяем в какой именно корзине должен находиться данный экземпляр,
+        // если он все же есть в нашей таблице.
+        // Для этого получим остаток от деления хешкода на количество корзин (по умолчанию 16)
+
+        int indexOfBucket = movieHash % countOfBucket;
+
+        LinkedList<Movie> listFromBucket = table.get(indexOfBucket);
+
+        if (listFromBucket == null || listFromBucket.isEmpty()) {
+            return false;
+        }
+
+        for (int i = 0; i < listFromBucket.size(); i++) {
+            if (listFromBucket.get(i).hashCode() == movieHash) {
+                if (movie.equals(listFromBucket.get(i))) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+
+    /**
+     * @param movie
+     * @return true - если фильм был добавлен, false - если запись уже существовала и аргумент не был добавлен
+     */
+    public boolean add(Movie movie) {
+        if (contains(movie)) {
+          return false;
+        }
+
+        // определяем индекс корзины, в которой должен находиться данный аргумент
+        int indexOfBucket = movie.hashCode() % countOfBucket;
+
+        LinkedList<Movie> listFromBucket = table.get(indexOfBucket);
+
+        // данная проверка нужна, так как по умолчанию без инициализации все объекты в массивах (ArrayList тоже массив)
+        // равны null, что может привести к NullPointerException
+        if (listFromBucket == null) {
+             listFromBucket = new LinkedList<Movie>();
+        }
+
+        listFromBucket.add(movie);
+        size++;
+        return true;
+    }
+
+    public ArrayList<Movie> toArray() {
+        ArrayList<Movie> arrayList = new ArrayList<>();
+
+        for (LinkedList<Movie> movies : table) {
+            arrayList.addAll(movies);
+        }
+
+        return arrayList;
+    }
 }

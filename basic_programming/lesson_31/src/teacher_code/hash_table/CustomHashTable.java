@@ -69,6 +69,10 @@ public class CustomHashTable {
         return true;
     }
 
+    public int size() {
+        return size;
+    }
+
     public ArrayList<Movie> toArray() {
         ArrayList<Movie> arrayList = new ArrayList<>();
 

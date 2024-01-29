@@ -44,6 +44,13 @@ public class Movie {
     }
 
     @Override
+    public int hashCode() {
+        int hashCode = 31 * movieName.hashCode() + 31 * durationMinutes;
+
+        return hashCode;
+    }
+
+    @Override
     public String toString() {
         return "Movie{" +
                 "movieName='" + movieName + '\'' +

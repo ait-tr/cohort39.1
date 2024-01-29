@@ -30,7 +30,7 @@ public class CustomHashTable {
         // если он все же есть в нашей таблице.
         // Для этого получим остаток от деления хешкода на количество корзин (по умолчанию 16)
 
-        int indexOfBucket = movieHash % countOfBucket;
+        int indexOfBucket = Math.abs(movieHash % countOfBucket);
 
         LinkedList<Movie> listFromBucket = table.get(indexOfBucket);
 
@@ -60,7 +60,7 @@ public class CustomHashTable {
         }
 
         // определяем индекс корзины, в которой должен находиться данный аргумент
-        int indexOfBucket = movie.hashCode() % countOfBucket;
+        int indexOfBucket = Math.abs(movie.hashCode() % countOfBucket);
 
         LinkedList<Movie> listFromBucket = table.get(indexOfBucket);
 

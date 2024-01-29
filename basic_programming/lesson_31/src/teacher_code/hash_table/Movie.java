@@ -1,5 +1,7 @@
 package teacher_code.hash_table;
 
+import java.util.Random;
+
 // объект кдасса Movie будет использован в классе CustomHashTable
 // для понимания на практике хеш-таблиц и практического применения
 // методов equals и hashCode

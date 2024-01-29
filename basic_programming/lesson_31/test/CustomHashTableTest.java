@@ -25,5 +25,16 @@ public class CustomHashTableTest {
         CustomHashTable table = new CustomHashTable();
 
         Assertions.assertFalse(table.contains(listOfMovies.get(0)));
+
+
+        Assertions.assertTrue(table.add(listOfMovies.get(0)));
+        Assertions.assertFalse(table.add(listOfMovies.get(0)));
+        Assertions.assertFalse(table.add(listOfMovies.get(1)));
+
+        Assertions.assertTrue(table.add(listOfMovies.get(3)));
+        Assertions.assertTrue(table.add(listOfMovies.get(4)));
+        Assertions.assertTrue(table.add(listOfMovies.get(5)));
+
+
     }
 }

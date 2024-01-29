@@ -15,6 +15,12 @@ public class CustomHashTable {
     private int size = 0;
 
     public CustomHashTable() {
+        // так как при создании, указан лишь capacity для ArrayList, это вовсе не означает,
+        // что при попытке получить доступ по индексу, я не получу ошибку.
+        // Поэтому для инициализации в кажды бакет кладем пустой LinkedList.
+        for (int i = 0; i < countOfBucket; i++) {
+            table.add(new LinkedList<Movie>());
+        }
     }
 
     public boolean contains(Movie movie) {
@@ -28,7 +34,7 @@ public class CustomHashTable {
 
         LinkedList<Movie> listFromBucket = table.get(indexOfBucket);
 
-        if (listFromBucket == null || listFromBucket.isEmpty()) {
+        if (listFromBucket.isEmpty()) {
             return false;
         }
 
@@ -57,12 +63,6 @@ public class CustomHashTable {
         int indexOfBucket = movie.hashCode() % countOfBucket;
 
         LinkedList<Movie> listFromBucket = table.get(indexOfBucket);
-
-        // данная проверка нужна, так как по умолчанию без инициализации все объекты в массивах (ArrayList тоже массив)
-        // равны null, что может привести к NullPointerException
-        if (listFromBucket == null) {
-             listFromBucket = new LinkedList<Movie>();
-        }
 
         listFromBucket.add(movie);
         size++;

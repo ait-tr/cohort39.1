@@ -1,8 +1,9 @@
 package teacher_sandbox;
 
 import java.util.ArrayList;
+import java.util.TreeSet;
 
-public class House {
+public class House implements Comparable<House> {
     private double area;
     private String address;
 
@@ -19,13 +20,24 @@ public class House {
                 '}';
     }
 
+    @Override
+    public int compareTo(House o) {
+        int areaCompare = Double.compare(this.area, o.area);
+
+        if (areaCompare == 0) {
+            return (this.address).compareTo(o.address);
+        }
+
+        return areaCompare;
+    }
+
     public static void main(String[] args) {
         House house1 = new House(100, "aaa");
         House house2 = new House(150, "bbb");
         House house3 = new House(80, "abc");
         House house4 = new House(36, "ccc");
 
-        ArrayList<House> houses = new ArrayList<>();
+        TreeSet<House> houses = new TreeSet<>();
 
         houses.add(house1);
         houses.add(house4);
@@ -35,5 +47,11 @@ public class House {
         for (House house : houses) {
             System.out.println(house);
         }
+
+        System.out.println(Integer.compare(12, 12));
+        System.out.println(Integer.compare(12, 34));
+        System.out.println(Integer.compare(102, 34));
     }
+
+
 }

@@ -2402,6 +2402,8 @@ map.get(new Key("python"));
 могут использоваться явные листовые узлы.
 Пример TreeMap, TreeSet
 
+![img_10.png](images%2Fimg_10.png)
+
 ```plaintext
                               13
                     /                   \

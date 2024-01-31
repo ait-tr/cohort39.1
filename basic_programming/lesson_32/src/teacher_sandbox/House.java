@@ -22,7 +22,7 @@ public class House implements Comparable<House> {
 
     @Override
     public int compareTo(House o) {
-        int areaCompare = Double.compare(this.area, o.area);
+        int areaCompare = Double.compare(this.area, o.area) * -1;
 
         if (areaCompare == 0) {
             return (this.address).compareTo(o.address);
@@ -33,9 +33,9 @@ public class House implements Comparable<House> {
 
     public static void main(String[] args) {
         House house1 = new House(100, "aaa");
-        House house2 = new House(150, "bbb");
-        House house3 = new House(80, "abc");
-        House house4 = new House(36, "ccc");
+        House house2 = new House(100, "bbb");
+        House house3 = new House(100, "abc");
+        House house4 = new House(100, "ccc");
 
         TreeSet<House> houses = new TreeSet<>();
 
@@ -52,6 +52,4 @@ public class House implements Comparable<House> {
         System.out.println(Integer.compare(12, 34));
         System.out.println(Integer.compare(102, 34));
     }
-
-
 }

@@ -20,6 +20,7 @@ public class House implements Comparable<House> {
                 '}';
     }
 
+    // метод compareTo используется для оценки
     @Override
     public int compareTo(House o) {
         int areaCompare = Double.compare(this.area, o.area) * -1;
@@ -53,3 +54,14 @@ public class House implements Comparable<House> {
         System.out.println(Integer.compare(102, 34));
     }
 }
+
+
+
+
+
+// [-9  -4  0  2  34  36]  67  [78  87  90  92  101]
+
+//                  67
+//         /                \
+//        2                 90
+//    /       \

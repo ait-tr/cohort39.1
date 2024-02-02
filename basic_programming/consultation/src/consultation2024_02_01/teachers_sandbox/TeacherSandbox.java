@@ -14,7 +14,6 @@ public class TeacherSandbox {
         Map <Integer, Map <String, Boolean>> cinemaHall = new HashMap<>();
     }
 
-
     private static<E> Collection<E>  removeNonuniqueElementFromCollection (Collection<E> collection) {
 
         HashSet<E> set = new HashSet<>(collection);
@@ -47,5 +46,4 @@ public class TeacherSandbox {
         Assert.assertTrue(removeNonuniqueElementFromCollection(list3).contains(3));
         Assert.assertTrue(removeNonuniqueElementFromCollection(list3).contains(4));
     }
-
 }

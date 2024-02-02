@@ -10,6 +10,7 @@ public class TeacherCode {
         String path = "basic_programming/lesson_33/src/teacher_code/file.txt";
         String unexistedPath = "basic_programming/lesson_33/src/teacher_code/file_1.txt";
         String dirPath = "basic_programming/lesson_33/src/teacher_code/";
+        String unexistedDirPath = "basic_programming/lesson_33/src/teacher_code/files_directory/";
 
         // абсолютный путь - путь к файлу от вашего компьютера.
         // абсолютный путь актуален в случае, если файл находится за пределами репозитория, в котором происходит
@@ -23,6 +24,7 @@ public class TeacherCode {
         File dir = new File(dirPath);
 
         File unexistedFile = new File(unexistedPath);
+        File unexistedDir = new File(unexistedDirPath);
 
         // метод exists() - проверяет существует ли файл
         System.out.println("file.exists() = " + file.exists());
@@ -49,7 +51,20 @@ public class TeacherCode {
         // true - если файл был удален
         System.out.println("unexistedFile.delete() = " + unexistedFile.delete());
 
+        //  listFiles() - возвращает массив файлов из указанной директориии, либо null
         System.out.println("file.listFiles() = " + file.listFiles());
         System.out.println("dir.listFiles() = " + Arrays.toString(dir.listFiles()));
+
+        // метод для создания директории, которой не существовало
+        System.out.println("unexistedDir.mkdir() = " + unexistedDir.mkdir());
+
+        System.out.println("unexistedDir.delete() = " + unexistedDir.delete());
+
+        // повторно создаем удаленный файл, чтобы переименовать:
+        unexistedFile.createNewFile();
+
+        // renameTo(File file) - переименовывает существующий файл в файл, указанный в аргументе:
+        unexistedFile.renameTo(new File(dirPath + "new_file.pdf"));
+
     }
 }

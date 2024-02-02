@@ -1,16 +1,13 @@
 package teacher_code;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class TeacherCode2 {
-    private static String pathToFile = "basic_programming/lesson_33/src/teacher_code/file2.txt";
+    private static String pathToFile = "basic_programming/lesson_33/src/teacher_code/file.txt";
 
     public static void main(String[] args) {
-        tryFileOutputStream();
+        tryFileWriter();
     }
 
     public static void tryWithResources() {
@@ -62,6 +59,28 @@ public class TeacherCode2 {
         try (FileOutputStream fos = new FileOutputStream(pathToFile)) {
             String data = "Hello, Java!";
             fos.write(data.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static void tryFileReader() {
+        try (FileReader fr = new FileReader(pathToFile);
+             BufferedReader br = new BufferedReader(fr)) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void tryFileWriter() {
+        try (FileWriter fw = new FileWriter(pathToFile, true);
+             BufferedWriter bw = new BufferedWriter(fw)) {
+            bw.write("Hello, Java!");
         } catch (IOException e) {
             e.printStackTrace();
         }

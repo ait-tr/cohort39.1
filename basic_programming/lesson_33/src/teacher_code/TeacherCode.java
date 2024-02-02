@@ -34,7 +34,6 @@ public class TeacherCode {
 
         System.out.println("file.length() = " + file.length());
 
-
         // два метода проверяющие, что файл является файлом или директорией
         System.out.println("file.isFile() = " + file.isFile());
         System.out.println("file.isDirectory() = " + file.isDirectory());
@@ -66,5 +65,11 @@ public class TeacherCode {
         // renameTo(File file) - переименовывает существующий файл в файл, указанный в аргументе:
         unexistedFile.renameTo(new File(dirPath + "new_file.pdf"));
 
+        // возвращает время последнего изменения файла в формате количества мс с 00:00:00 1 янв 1970г
+        System.out.println("file.lastModified() = " + file.lastModified());
+
+        // данные методы показывают возможность читать указанный файл и записвыть в него новую информацию
+        System.out.println("file.canRead() = " + file.canRead());
+        System.out.println("file.canWrite() = " + file.canWrite());
     }
 }

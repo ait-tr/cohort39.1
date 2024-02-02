@@ -3,6 +3,7 @@ package teacher_code;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class TeacherCode {
     public static void main(String[] args) throws IOException {
@@ -16,7 +17,6 @@ public class TeacherCode {
         // /Users/imiftakhov/Desktop/Java/AIT-TR/cohort39.1/basic_programming/lesson_33/src/teacher_code/file.txt
 
         // в случае, если файл находится в том же репозитории, актуальней взять путь от корня репозитория
-
 
         // класс File - описывает объект "файл" в системе jvm
         File file = new File(path);
@@ -46,6 +46,10 @@ public class TeacherCode {
         // true - если файла не было и мы его создали успешно
         System.out.println("unexistedFile.createNewFile() = " + unexistedFile.createNewFile());
 
+        // true - если файл был удален
+        System.out.println("unexistedFile.delete() = " + unexistedFile.delete());
 
+        System.out.println("file.listFiles() = " + file.listFiles());
+        System.out.println("dir.listFiles() = " + Arrays.toString(dir.listFiles()));
     }
 }

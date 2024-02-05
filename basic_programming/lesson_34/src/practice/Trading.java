@@ -10,6 +10,7 @@ public class Trading {
     // [5, 6, 1, 2] -> 1
     // [5, 3, 1] -> 0
     // [100, 200, 200, 3, 90] -> 100
+    // [999, 999, 100, 200, 200, 3, 90] -> 100
 
     public static int calculateMaxProfit(int[] prices) {
         // logic

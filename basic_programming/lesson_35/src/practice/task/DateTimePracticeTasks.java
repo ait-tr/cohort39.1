@@ -10,6 +10,12 @@ import java.time.Duration;
 import java.time.ZoneId;
 
 public class DateTimePracticeTasks {
+    public static void main(String[] args) {
+        System.out.println("Age: " + calculateAge("1990-01-01"));
+        System.out.println("Minutes between: " + timeBetween("09:00:00", "10:30:00"));
+        System.out.println("Day of week: " + findDayOfWeek("2023-01-01"));
+        System.out.println("Formatted current date and time: " + formatCurrentDateTime());
+    }
 
     /**
      * Задача 1: Рассчитайте возраст человека на основе его даты рождения.
@@ -49,13 +55,6 @@ public class DateTimePracticeTasks {
      */
     public static String formatCurrentDateTime() {
         return null;
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Age: " + calculateAge("1990-01-01"));
-        System.out.println("Minutes between: " + timeBetween("09:00:00", "10:30:00"));
-        System.out.println("Day of week: " + findDayOfWeek("2023-01-01"));
-        System.out.println("Formatted current date and time: " + formatCurrentDateTime());
     }
 }
 

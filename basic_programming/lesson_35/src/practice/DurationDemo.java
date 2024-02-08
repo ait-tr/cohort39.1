@@ -18,6 +18,8 @@ public class DurationDemo {
 
         // Вычисляем продолжительность между двумя моментами времени
         Duration duration = Duration.between(startDateTime, endDateTime);
+        System.out.println(duration);
+
 
         // Выводим различные аспекты Duration
         System.out.println("Общее количество секунд: " + duration.getSeconds()); // Выводит общее количество секунд в Duration

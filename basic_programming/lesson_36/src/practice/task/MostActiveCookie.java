@@ -1,11 +1,26 @@
 package practice.task;
 
+import practice.solution.CSVCookieProcessing;
+import practice.solution.CookieReaderException;
+
 import java.io.*;
 import java.util.*;
 
 public class MostActiveCookie {
+    // Single Responsibility (Принцип единственной ответственности)
+    // Open/Closed (Принцип открытости/закрытости)
+    // Liskov Substitution (Принцип подстановки Барбары Лисков)
+    // Interface Segregation (Принцип разделения интерфейса)
+    // Dependency Inversion (Принцип инверсии зависимостей)
 
-    public static void main(String[] args) {
+    // DRY (чистый код) - соответствует (?), я согласен
+    // KISS (простой, читабельный код) - соответствует (?), не согласен ()
+    // SOLID - не соответсвует!  согласен
+
+    public static void main(String[] args) throws CookieReaderException {
+        CSVCookieProcessing.process(args);
+        // все что ниже, не должно быть в методе main
+
         // Инициализация переменных для хранения имени файла и даты
         String fileName = null;
         String date = null;

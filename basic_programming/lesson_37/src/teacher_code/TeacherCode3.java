@@ -17,9 +17,18 @@ public class TeacherCode3 {
         houses.add(h2);
         houses.add(h3);
 
-        Comparator<House> compareByFloorAsc = (house1, house2) -> house1.getFloor() - house2.getFloor();
+        Comparator<House> compareByFloorAsc = (house1, house2) -> {
+            int floor1 = house1.getFloor();
+            int floor2 = house2.getFloor();
+            int result = floor1 - floor2;
+            return  result;
 
-        houses.sort(compareByFloorAsc);
+        };
+
+        Comparator<House> compareByFloorAscLambda = (house1, house2) -> house1.getFloor() - house2.getFloor();
+
+
+        houses.sort((house1, house2) -> house1.getFloor() - house2.getFloor());
 
         for (House house : houses) {
             System.out.println(house);

@@ -46,7 +46,7 @@ public class House {
         return getAddress().equals(house.getAddress());
     }
 
- //   хорошо и полностью определенный метод hashCode должен вернуть число с наибольшим распределением по значениям
+    //хорошо и полностью определенный метод hashCode должен вернуть число с наибольшим распределением по значениям
     @Override
     public int hashCode() {
         int result;
@@ -61,37 +61,4 @@ public class House {
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
-
-
-    // плохо определенный метод equals
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true; // если 2 объекта имеют одинаковую ссылку
-//        if (!(o instanceof House)) return false; // если o не является сущностью класса House
-//
-//        House house = (House) o; // создаем новый экземпляр для работы с ним
-//
-//        return this.getFloor() == house.getFloor() && this.getAddress().equals(house.address); // сравнение идет только по этажу, если этаж один и тот же, то считаем,
-//        // что объекты равны
-//    }
-//
-//    //плохо определенный метод hashCode
-//    @Override
-//    public int hashCode() {
-//        return this.floor + (int) this.square + this.address.length();
-//    }
-
-    public static void main(String[] args) {
-        House h1 = new House(12, "abc", 30.000000000001);
-        House h2 = new House(12, "abc", 30.000000000002);
-
-        System.out.println(h1 == h2);
-        System.out.println(h1.equals(h2));
-
-        System.out.println("h1 hashCode = " + h1.hashCode());
-        System.out.println("h2 hashCode = " + h2.hashCode());
-    }
-
-
-
 }

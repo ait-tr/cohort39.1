@@ -32,7 +32,6 @@ public class House {
         return "House{" + "floor=" + floor + ", address='" + address + '\'' + ", square=" + square + '}';
     }
 
-
     //хорошо и полностью определенный метод equals сравнивает по значениям всех полей в объекте
     @Override
     public boolean equals(Object o) {

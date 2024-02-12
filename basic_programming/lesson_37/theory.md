@@ -387,10 +387,12 @@ public interface MyFunctionalInterface {
 ### Лямбда-выражения
 
 ```java
+public class FunctionExample {
+  public static void main(String[] args) {
     MyFunctionalInterface myFunc = () -> System.out.println("Hello World!");
-    myFunc.
-
-myAbstractMethod();  // Output: Hello World!
+    myFunc.myAbstractMethod();  // Output: Hello World!
+  }
+}
 ```
 
 ### Ссылки на методы

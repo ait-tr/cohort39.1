@@ -6,10 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -60,11 +57,25 @@ public class TeacherCode2 {
     }
 
     static Stream<Integer> getStreamFromFile() throws IOException {
-
         Stream<String> fromFileS = Files.lines(Paths.get("basic_programming/lesson_38/src/teacher_code/file.txt"));
 
         return fromFileS
                 .map(e -> Integer.parseInt(e))
                 .collect(Collectors.toList()).stream();
     }
+
+    static Stream getStreamFromStreamBuilder() {
+        Stream<Object> stream = Stream.builder()
+                .add(1)
+                .add(2)
+                .add(3)
+                .add(4)
+                .add(5)
+                .add(6)
+                .add(7)
+                .build();
+
+        return stream;
+    }
+
 }

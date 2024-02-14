@@ -14,14 +14,23 @@ public class TeacherCode2 {
             }
         }
 
-        Stream<Integer> stream = collection.stream();
+        Stream<Integer> stream = getStreamFromCollection(collection);
 
-        stream
+        Integer oddsSum = stream
                 .filter(e -> e % 2 == 1)
                 .reduce((c1, c2) -> c1 + c2)
                 .orElse(0);
 
 
         System.out.println("oldOdd = " + oldOdd);
+        System.out.println("oddsSum = " + oddsSum);
+
+
     }
+
+    static Stream<Integer> getStreamFromCollection(Collection<Integer> collection) {
+        return collection.stream();
+    }
+
+
 }

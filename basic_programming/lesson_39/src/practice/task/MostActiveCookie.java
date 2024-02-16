@@ -7,6 +7,9 @@ import java.io.*;
 import java.util.*;
 
 public class MostActiveCookie {
+    // cli arguments:
+    // -f basic_programming/lesson_39/src/practice/task/cookie.csv -d 2018-12-09
+
     // Single Responsibility (Принцип единственной ответственности)
     // Open/Closed (Принцип открытости/закрытости)
     // Liskov Substitution (Принцип подстановки Барбары Лисков)

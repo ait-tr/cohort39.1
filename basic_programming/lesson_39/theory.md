@@ -1,7 +1,7 @@
 <details>
 <summary> Lesson 39. Learning the principles of programming </summary>
 
-# Lesson 36. Learning the principles of programming
+# Lesson 39. Learning the principles of programming
 
 ## Introduction to programming principles
 
@@ -490,7 +490,7 @@ daily development practice.
 <details>
 <summary>Урок 39. Изучение принципов программирования </summary>
 
-# Урок 36. Изучение принципов программирования
+# Урок 39. Изучение принципов программирования
 
 ## Введение в принципы программирования
 

@@ -20,7 +20,7 @@ public class CSVCookieFileReader implements CookieFileReader{
                 String[] parts = line.split(",");
                 // Проверка, соответствует ли запись заданной дате
                 if (parts.length == 2 && parts[1].startsWith(date)) {
-                    LocalDateTime parsedDate = LocalDateTime.parse(parts[1], DateTimeFormatter.ISO_LOCAL_DATE);
+                    LocalDateTime parsedDate = LocalDateTime.parse(parts[1], DateTimeFormatter.ISO_OFFSET_DATE_TIME);
                     String cookieId = parts[0];
 
                     Cookie cookie = new CSVCookie(cookieId, parsedDate);

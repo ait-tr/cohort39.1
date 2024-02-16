@@ -18,7 +18,6 @@ public class MostActiveCookie {
     // SOLID - не соответсвует!  согласен
 
     public static void main(String[] args) throws CookieReaderException {
-        CSVCookieProcessing.process(args);
         // все что ниже, не должно быть в методе main
 
         // Инициализация переменных для хранения имени файла и даты

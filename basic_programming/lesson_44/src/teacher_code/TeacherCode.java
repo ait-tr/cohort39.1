@@ -8,16 +8,15 @@ public class TeacherCode {
         Thread t1 = createThread("t1", 500);
         Thread t2 = createThread("t2", 700);
 
+
 //        Thread t1 = createThreadWithPriority("t1", 10);
 //        Thread t2 = createThreadWithPriority("t2", 1);
-
-
 
         t1.start();
         t2.start();
 
-        System.out.println("t1 name: " + t1.getName() + "; t1 priority = " + t1.getPriority());
-        System.out.println("t2 name: " + t2.getName() + "; t2 priority = " + t2.getPriority());
+        System.out.println("t1 name: " + t1.getName() + "; t1 priority = " + t1.getPriority() + "; isDaemon " + t1.isDaemon());
+        System.out.println("t2 name: " + t2.getName() + "; t2 priority = " + t2.getPriority() + "; isDaemon " + t2.isDaemon());
 //
 //        Thread.currentThread().setName("MAIN THREAD!!!");
 //

@@ -2,7 +2,7 @@ package teacher_code;
 
 
 public class TeacherCode {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Thread.currentThread().setPriority(3);
 
         Thread t1 = createThread("t1", 500);
@@ -10,14 +10,32 @@ public class TeacherCode {
 
 //        Thread t1 = createThreadWithPriority("t1", 10);
 //        Thread t2 = createThreadWithPriority("t2", 1);
-        t1.setDaemon(true);
-        t2.setDaemon(true);
+//        t1.setDaemon(true);
+//        t2.setDaemon(true);
 
         t1.start();
         t2.start();
 
-        System.out.println("t1 name: " + t1.getName() + "; t1 priority = " + t1.getPriority() + "; isDaemon " + t1.isDaemon());
-        System.out.println("t2 name: " + t2.getName() + "; t2 priority = " + t2.getPriority() + "; isDaemon " + t2.isDaemon());
+        System.out.println("t1 name: " + t1.getName() + "; t1 priority = " + t1.getPriority() +
+                "; isDaemon " + t1.isDaemon() + "; group name = " + t1.getThreadGroup().getName() +
+                "; isInterrupted " + t1.isInterrupted());
+
+        System.out.println("t2 name: " + t2.getName() + "; t2 priority = " + t2.getPriority() +
+                "; isDaemon " + t2.isDaemon()  + "; group name = " + t1.getThreadGroup().getName() +
+                "; isInterrupted " + t2.isInterrupted());
+
+
+        System.out.println("Main thread = " +
+                Thread.currentThread().getThreadGroup().getName());
+
+        Thread.sleep(1000);
+
+        t1.stop();
+        t2.interrupt();
+
+        System.out.println("t1.isInterrupted() = " + t1.isInterrupted());
+        System.out.println("t2.isInterrupted() = " + t2.isInterrupted());
+
 //
 //        Thread.currentThread().setName("MAIN THREAD!!!");
 //

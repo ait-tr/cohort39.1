@@ -8,9 +8,10 @@ public class TeacherCode {
         Thread t1 = createThread("t1", 500);
         Thread t2 = createThread("t2", 700);
 
-
 //        Thread t1 = createThreadWithPriority("t1", 10);
 //        Thread t2 = createThreadWithPriority("t2", 1);
+        t1.setDaemon(true);
+        t2.setDaemon(true);
 
         t1.start();
         t2.start();
@@ -21,7 +22,6 @@ public class TeacherCode {
 //        Thread.currentThread().setName("MAIN THREAD!!!");
 //
 //        System.out.println("Main thread name " + Thread.currentThread().getName());
-
 
         System.out.println("======= MAIN =========");
     }

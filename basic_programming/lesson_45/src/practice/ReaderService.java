@@ -1,9 +1,5 @@
 package practice;
 
-import java.util.List;
-
-public interface ReaderService {
-    void registerReader(Reader reader);
-    List<Reader> findAllReaders();
+// Слой бизнес-логики
+public class ReaderService {
 }
-

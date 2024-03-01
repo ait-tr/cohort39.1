@@ -1,9 +1,13 @@
 package practice;
 
-import java.util.List;
+//Слой бизнес-логики
+public class BookService {
+    private BookRepository bookRepository;
 
-public interface BookService {
-    void addBook(Book book);
-    List<Book> findAllBooks();
+    // метод показа всех книг в библиотеке.
+    // что для этого надо?
+    // - иметь доступ к репозитоию с книгами
+    public BookService(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
 }
-

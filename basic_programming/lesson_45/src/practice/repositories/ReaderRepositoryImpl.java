@@ -1,8 +1,11 @@
-package practice;
+package practice.repositories;
+
+import practice.interfaces.ReaderRepository;
+import practice.models.Reader;
 
 import java.util.List;
 
-public class ReaderRepositoryImpl implements ReaderRepository{
+public class ReaderRepositoryImpl implements ReaderRepository {
     @Override
     public void registerReader(Reader reader) {
 

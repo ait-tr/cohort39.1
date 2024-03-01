@@ -1,4 +1,4 @@
-package practice;
+package practice.models;
 
 // Модель
 public class Author {

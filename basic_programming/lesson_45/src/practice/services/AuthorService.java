@@ -1,4 +1,7 @@
-package practice;
+package practice.services;
+
+import practice.interfaces.AuthorRepository;
+import practice.models.Author;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,6 @@
-package practice;
+package practice.services;
+
+import practice.interfaces.BookRepository;
 
 //Слой бизнес-логики
 public class BookService {

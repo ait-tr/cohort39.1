@@ -1,8 +1,11 @@
-package practice;
+package practice.repositories;
+
+import practice.interfaces.BookRepository;
+import practice.models.Book;
 
 import java.util.List;
 
-public class BookRepositoryImpl implements BookRepository{
+public class BookRepositoryImpl implements BookRepository {
     @Override
     public void addBook(Book book) {
 

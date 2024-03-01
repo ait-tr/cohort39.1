@@ -1,4 +1,6 @@
-package practice;
+package practice.interfaces;
+
+import practice.models.Book;
 
 import java.util.List;
 

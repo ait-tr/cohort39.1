@@ -1,9 +1,12 @@
-package practice;
+package practice.repositories;
+
+import practice.interfaces.AuthorRepository;
+import practice.models.Author;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AuthorRepositoryImpl implements AuthorRepository{
+public class AuthorRepositoryImpl implements AuthorRepository {
     private List<Author> authors;
 
     public AuthorRepositoryImpl() {

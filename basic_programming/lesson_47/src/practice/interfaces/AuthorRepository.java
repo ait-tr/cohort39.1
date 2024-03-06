@@ -8,5 +8,7 @@ import java.util.List;
 public interface AuthorRepository {
     void addAuthor(Author author);
     List<Author> findAllAuthors();
+
+    boolean removeAuthor(Author author);
 }
 

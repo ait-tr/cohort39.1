@@ -7,6 +7,7 @@ import practice.repositories.AuthorRepositoryImpl;
 import practice.repositories.BookRepositoryImpl;
 import practice.repositories.ReaderRepositoryImpl;
 import practice.services.AuthorService;
+import practice.services.BookService;
 
 import java.util.Scanner;
 
@@ -18,13 +19,16 @@ public class LibraryApplication {
     private final ReaderRepository readerRepository;
 
     private final AuthorService authorService;
+    private final BookService bookService;
     private final Scanner scanner;
 
     public LibraryApplication(BookRepository bookRepository, AuthorRepository authorRepository, ReaderRepository readerService) {
         this.bookRepository = bookRepository;
         this.authorRepository = authorRepository;
         this.readerRepository = readerService;
-        this.authorService = new AuthorService(this.authorRepository);
+        this.bookService = new BookService(bookRepository);
+        this.authorService = new AuthorService(this.authorRepository, bookService);
+
         this.scanner = new Scanner(System.in);
     }
 

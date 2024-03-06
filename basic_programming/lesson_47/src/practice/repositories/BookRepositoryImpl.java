@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class BookRepositoryImpl implements BookRepository {
-    List<Book> books;
+    private List<Book> books;
 
     public BookRepositoryImpl() {
         books = new ArrayList<>();

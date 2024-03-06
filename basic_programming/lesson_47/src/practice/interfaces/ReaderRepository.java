@@ -8,5 +8,7 @@ import java.util.List;
 public interface ReaderRepository {
     void registerReader(Reader reader);
     List<Reader> findAllReaders();
+
+    boolean removeReader(Reader reader);
 }
 

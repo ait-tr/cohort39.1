@@ -3,12 +3,14 @@ package practice;
 import practice.interfaces.AuthorRepository;
 import practice.interfaces.BookRepository;
 import practice.interfaces.ReaderRepository;
+import practice.models.Book;
 import practice.repositories.AuthorRepositoryImpl;
 import practice.repositories.BookRepositoryImpl;
 import practice.repositories.ReaderRepositoryImpl;
 import practice.services.AuthorService;
 import practice.services.BookService;
 
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -47,17 +49,40 @@ public class LibraryApplication {
             System.out.println("6. Добавить нового автора");
             System.out.println("0. Выход");
 
-            int choice = scanner.nextInt();
+            int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    // Логика отображения списка книг
-                    // уточнение
+                    System.out.println("Вывести названия всех имеющихся книг или искать конкретную по:\n" +
+                            "1 - имени автора\n" +
+                            "2 - названию книги\n" +
+                            "3 - жанру\n" +
+                            "0 - все имеющиеся книги");
+
+                    choice = Integer.parseInt(scanner.nextLine());
+
+                    switch (choice) {
+                        case 1:
+                            System.out.println("Введите пожалуйста имя автора:");
+                            String authorName = scanner.nextLine();
+                            System.out.println("Список найденных книг:");
+                            print(bookService.findBooksByAuthor(authorName));
+                            break;
+                        case 2:
+                            System.out.println("Введите пожалуйста название книги:");
+                            String title = scanner.nextLine();
+                            System.out.println("Список найденных книг:");
+                            print(bookService.findBooksByTitle(title));
+                            break;
+                        case 3:
+                            print(bookService.findBooksByGenre(findGenre()));
+                            break;
+                        case 0:
+                            print(bookService.getAllBook());
+                    }
                     break;
                 case 2:
-                    // Логика отображения списка авторов
                     System.out.println("Вывести всех авторов или искать по имени?");
-                    //stub
-                    scanner.nextLine();
+
                     if (scanner.nextLine().equals("1")) {
                         System.out.println(authorService.getAllAuthors());
                     } else {
@@ -70,7 +95,7 @@ public class LibraryApplication {
                     // Логика отображения списка читателей
                     break;
                 case 4:
-                    // Логика добавления новой книги
+                    bookService.addBook(scanner);
                     break;
                 case 5:
                     // Логика регистрации нового читателя
@@ -86,6 +111,31 @@ public class LibraryApplication {
                     System.out.println("Неверный ввод, попробуйте снова.");
             }
         }
+    }
+
+    public static void print(List list) {
+        for (Object o : list) {
+            System.out.println(o.toString());
+        }
+    }
+
+    private Book.Genre findGenre() {
+        System.out.println("Пожалуйста выберите цифру для жанра:\n" +
+                "1 - CLASSIC,\n" +
+                "2 - DETECTIVE,\n" +
+                "3 - LOVE_STORY,\n" +
+                "4 - SCIENCE,\n" +
+                "0 - без жанра");
+
+        int genreNumber = Integer.parseInt(scanner.nextLine());
+
+        switch (genreNumber) {
+            case 1 -> {return Book.Genre.CLASSIC;}
+            case 2 -> {return Book.Genre.DETECTIVE;}
+            case 3 -> {return Book.Genre.LOVE_STORY;}
+            case 4 -> {return Book.Genre.SCIENCE;}
+        }
+        return null;
     }
 
     public static void main(String[] args) {

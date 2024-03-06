@@ -41,9 +41,6 @@ public class AuthorService {
     }
 
     public Author addAuthor(Scanner scanner) {
-        //stub
-        scanner.nextLine();
-
         System.out.println("Пожалуйста введите полное имя автора:");
         String authorName = scanner.nextLine();
         System.out.println("Пожалуйста год рождения автора:");

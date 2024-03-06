@@ -132,7 +132,9 @@ public class BookService {
                 "1 - CLASSIC,\n" +
                 "2 - DETECTIVE,\n" +
                 "3 - LOVE_STORY,\n" +
-                "0 - SCIENCE");
+                "4 - SCIENCE,\n" +
+                "0 - без жанра");
+
         int genreNumber = Integer.parseInt(scanner.nextLine());
 
         switch (genreNumber) {

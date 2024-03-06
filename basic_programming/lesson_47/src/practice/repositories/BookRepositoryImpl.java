@@ -20,7 +20,12 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public void addBook(Book book) {
-        books.add(book);
+        if (books.contains(book)) {
+            System.out.println("Данная книга уже есть в репозитории");
+        } else {
+            books.add(book);
+            System.out.println("Книга " + book.toString() + " была успешно добавлена в книжный репозиторий");
+        }
     }
 
     @Override

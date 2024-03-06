@@ -47,8 +47,8 @@ public class AuthorService {
         System.out.println("Пожалуйста введите полное имя автора:");
         String authorName = scanner.nextLine();
         System.out.println("Пожалуйста год рождения автора:");
-        int yearOfBirth = scanner.nextInt();
-        // validation
+        int yearOfBirth = Integer.parseInt(scanner.nextLine());
+        // todo validation
 
         Author author = new Author(authorName, yearOfBirth);
         repository.addAuthor(author);

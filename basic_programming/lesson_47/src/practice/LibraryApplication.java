@@ -22,13 +22,16 @@ public class LibraryApplication {
     private final BookService bookService;
     private final Scanner scanner;
 
-    public LibraryApplication(BookRepository bookRepository, AuthorRepository authorRepository, ReaderRepository readerService) {
+    public LibraryApplication(BookRepository bookRepository, AuthorRepository authorRepository,
+                              ReaderRepository readerService) {
         this.bookRepository = bookRepository;
         this.authorRepository = authorRepository;
         this.readerRepository = readerService;
         this.bookService = new BookService(bookRepository);
         this.authorService = new AuthorService(this.authorRepository, bookService);
 
+        //stub
+        this.bookService.setAuthorService(this.authorService);
         this.scanner = new Scanner(System.in);
     }
 

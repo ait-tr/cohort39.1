@@ -40,7 +40,7 @@ public class AuthorService {
         return repository.findAllAuthors();
     }
 
-    public void addAuthor(Scanner scanner) {
+    public Author addAuthor(Scanner scanner) {
         //stub
         scanner.nextLine();
 
@@ -52,6 +52,8 @@ public class AuthorService {
 
         Author author = new Author(authorName, yearOfBirth);
         repository.addAuthor(author);
+
+        return author;
     }
 
     public void removeAuthor(Author author) {

@@ -47,6 +47,9 @@ public class TeacherCode {
             }
         });
 
+        a.setName("AAAAAAA");
+        b.setName("BBBBBBB");
+
         a.start();
         b.start();
     }

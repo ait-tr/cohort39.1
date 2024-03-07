@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 // Слой бизнес-логики
 public class ReaderService {
+
     private ReaderRepository repository;
 
     public ReaderService() {

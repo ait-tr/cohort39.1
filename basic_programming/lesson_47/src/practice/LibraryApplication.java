@@ -16,21 +16,25 @@ import java.util.Scanner;
 
 // Слой представления
 public class LibraryApplication {
-    private final BookRepository bookRepository;
-    private final AuthorRepository authorRepository;
-    private final ReaderRepository readerRepository;
-
     private final AuthorService authorService;
     private final BookService bookService;
     private final Scanner scanner;
 
-    public LibraryApplication(BookRepository bookRepository, AuthorRepository authorRepository,
+    public LibraryApplication() {
+        this.bookService = new BookService();
+        this.authorService = new AuthorService(bookService);
+
+        //stub
+        this.bookService.setAuthorService(this.authorService);
+        this.scanner = new Scanner(System.in);
+    }
+
+    public LibraryApplication(BookRepository bookRepository,
+                              AuthorRepository authorRepository,
                               ReaderRepository readerService) {
-        this.bookRepository = bookRepository;
-        this.authorRepository = authorRepository;
-        this.readerRepository = readerService;
+
         this.bookService = new BookService(bookRepository);
-        this.authorService = new AuthorService(this.authorRepository, bookService);
+        this.authorService = new AuthorService(authorRepository, bookService);
 
         //stub
         this.bookService.setAuthorService(this.authorService);
@@ -136,15 +140,6 @@ public class LibraryApplication {
             case 4 -> {return Book.Genre.SCIENCE;}
         }
         return null;
-    }
-
-    public static void main(String[] args) {
-        BookRepository bookRepository = new BookRepositoryImpl();
-        AuthorRepository authorService = new AuthorRepositoryImpl();
-        ReaderRepository readerService = new ReaderRepositoryImpl();
-
-        LibraryApplication app = new LibraryApplication(bookRepository, authorService, readerService);
-        app.run();
     }
 }
 

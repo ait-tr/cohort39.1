@@ -3,6 +3,7 @@ package practice.services;
 import practice.interfaces.BookRepository;
 import practice.models.Author;
 import practice.models.Book;
+import practice.repositories.BookRepositoryImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,10 @@ public class BookService {
     private BookRepository bookRepository;
     private AuthorService authorService;
 
+
+    public BookService() {
+        this.bookRepository = new BookRepositoryImpl();
+    }
     // метод показа всех книг в библиотеке.
     // что для этого надо?
     // - иметь доступ к репозитоию с книгами

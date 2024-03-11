@@ -1,4 +1,4 @@
-package student_code.Models;
+package practice.Models;
 
 import java.util.Objects;
 

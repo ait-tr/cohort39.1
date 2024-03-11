@@ -1,4 +1,4 @@
-package practice.Models;
+package practice.models;
 
 import java.util.Objects;
 

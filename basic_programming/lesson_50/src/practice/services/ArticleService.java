@@ -11,18 +11,38 @@ import java.util.Scanner;
 import java.util.Set;
 
 //ArticleService: Логика работы со статьями, включая создание, поиск по критериям, обновление и удаление.
+
+/**
+ * сервисный класс для взаимодействия с классом Article. Отвечает за операции логической валидации добавления, удаления
+ * и обновления Article из репозитория.
+ *
+ * @see Article
+ * @see ArticleRepository
+ * @see ArticleRepositoryImpl
+ * @see AuthorService
+ * @see CommentService
+ */
 public class ArticleService {
     private ArticleRepository repository;
 
-    // ниже 2 объекта нужны для работы методов, тк статьи имеют авторов и комментарии
+    // AuthorService - используется для взаимодействия с AuthorService,
+    // и получения валидных данных при создании комментариев
     private AuthorService authorService;
     private CommentService commentService;
 
-    // 2 конструктора
+    /**
+     * конструктор по умолчанию, используется в случае, если нет спецефической реализации для ArticleRepository, в этом
+     * случае инициализируется дефолтный репозиторий  - ArticleRepositoryImpl.
+     */
     public ArticleService() {
         repository = new ArticleRepositoryImpl();
     }
 
+
+    /**
+     * Данный конструктор используется в случае, если приложение имеет не дефолтную реализацию репозитория
+     * @param repository
+     */
     public ArticleService(ArticleRepository repository) {
         this.repository = repository;
     }
@@ -31,7 +51,8 @@ public class ArticleService {
     public void setAuthorService(AuthorService authorService) {
         this.authorService = authorService;
     }
-    public void setCommentService (CommentService commentService){
+
+    public void setCommentService(CommentService commentService) {
         this.commentService = commentService;
     }
 
@@ -62,12 +83,20 @@ public class ArticleService {
         }
     }
 
-    // МЕТОДЫ ДЛЯ ОБНОВЛЕНИЯ ДАННЫХ В СУЩЕСТВУЮЩЕЙ СТАТЬЕ
-    // попробую сделать методы для ИЗМЕНЕНИЯ СТАТЬИ без передачи статьи в качестве аргумента (как это было с автором)
+    /**
+     * Метод используется для обновления заголовка статьи. Для корректной работы метода требуется ввести существующий
+     * ID статьи, которая будет обновлена.
+     * @param scanner используется сканнер для взаимодействия с тем же источником ввода, что и в слое представления
+     * @throws RuntimeException выбрасывается в случае, если указан не верный id статьи
+     */
     public void updateArticleTitle(Scanner scanner) {
         System.out.println("Write article ID:");
         Article article = findArticleByID(scanner.nextInt());
         scanner.nextLine();
+
+        if (article == null) {
+            throw new RuntimeException("Incorrect Article ID");
+        }
 
         if (article == null) {
             System.out.println("Article with this ID doesnt exist");
@@ -90,9 +119,10 @@ public class ArticleService {
         }
     }
 
-    // у статьи нельзя изменить автора, так решили ранее
-
-    // МЕТОДЫ ДЛЯ ПОИСКА СТАТЕЙ
+    /**
+     *
+     * @return возвращает сет статей всех существующих статей
+     */
     public Set<Article> findAllArticles() {
         return repository.findAllArticles();
     }
@@ -130,7 +160,7 @@ public class ArticleService {
         return null;
     }
 
-// дописала этот метод чтобы работало public Set<Comment> findAllCommentsByArticleTitel(Scanner scanner) в классе CommentService
+    // дописала этот метод чтобы работало public Set<Comment> findAllCommentsByArticleTitel(Scanner scanner) в классе CommentService
     public Article findArticlesByTitel(Scanner scanner) {
         System.out.println("Write titel of article to find its comments: ");
         String titel = scanner.nextLine();
@@ -143,13 +173,13 @@ public class ArticleService {
         return null;
     }
 
-    public Set<Article> findArticlesByAuthor(Scanner scanner){
+    public Set<Article> findArticlesByAuthor(Scanner scanner) {
         Set<Article> articlesByAuthor = new HashSet<>();
         System.out.println("Write author name to find his articles");
         String authorName = scanner.nextLine();
         Author author = authorService.findAuthorByName(authorName);
-        for (Article article: repository.findAllArticles()){
-            if (article.getAuthor().equals(author)){
+        for (Article article : repository.findAllArticles()) {
+            if (article.getAuthor().equals(author)) {
                 articlesByAuthor.add(article);
             }
         }

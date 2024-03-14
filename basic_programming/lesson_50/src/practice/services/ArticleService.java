@@ -136,20 +136,6 @@ public class ArticleService {
         return null;
     }
 
-    // ниже 3 метода по поиску статьи по заголовку :
-
-//    public Set<Article> findArticlesByTitel(String titel) {
-//        Set<Article> articlesByTitel = new HashSet<>();
-//
-//        for (Article atricle : repository.findAllArticles()) {
-//            // сделала через .contains() чтобы найти все статьи с таим словом/фразой
-//            // тк titel не уникальный, выдавать конкретную статью нелогично на мой взгляд
-//            if (atricle.getTitle().contains(titel.trim())) {
-//                articlesByTitel.add(atricle);
-//            }
-//        }
-//        return articlesByTitel;
-//    }
 
     public Article findArticlesByTitel(String titel) {
         for (Article atricle : repository.findAllArticles()) {

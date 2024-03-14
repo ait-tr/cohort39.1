@@ -1,8 +1,5 @@
 package practice.repository;
 
-
-
-
 import practice.interfaces.AuthorRepository;
 import practice.models.Author;
 
@@ -10,14 +7,14 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-public class AuthorRepositoryIml implements AuthorRepository {
+public class AuthorRepositoryImpl implements AuthorRepository {
     private Set<Author> authors;
 
-    public AuthorRepositoryIml() {
+    public AuthorRepositoryImpl() {
         authors = new HashSet<>();
     }
 
-    public AuthorRepositoryIml(Collection<Author> authors) {
+    public AuthorRepositoryImpl(Collection<Author> authors) {
         this.authors = new HashSet<>(authors);
     }
 

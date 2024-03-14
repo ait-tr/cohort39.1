@@ -18,9 +18,7 @@ public class Comment {
     private Author author;
     private static int count;
 
-
-
-    public Comment(Article article, String text, Author author) {
+    public Comment( Article article, String text, Author author) {
         this.ID = count++;
         this.article = article;
         this.text = text;
@@ -61,8 +59,7 @@ public class Comment {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Comment comment = (Comment) o;
-        return ID == comment.ID && Objects.equals(article, comment.article) && Objects.equals(text, comment.text) &&
-                Objects.equals(publishDate, comment.publishDate) && Objects.equals(author, comment.author);
+        return ID == comment.ID && Objects.equals(article, comment.article) && Objects.equals(text, comment.text) && Objects.equals(publishDate, comment.publishDate) && Objects.equals(author, comment.author);
     }
 
     @Override

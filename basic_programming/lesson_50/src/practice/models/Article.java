@@ -18,7 +18,7 @@ public class Article {
     private Author author;
     private static int count;
 
-    public Article(String title, String content, Author author) {
+    public Article( String title, String content, Author author) {
         this.ID = count++;
         this.title = title;
         this.content = content;

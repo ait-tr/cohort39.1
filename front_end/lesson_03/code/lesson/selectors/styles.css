@@ -1,0 +1,39 @@
+/* универсальный селектор  */
+* {
+  font-weight: bold;
+}
+
+/* селектор по тегу (элементу) */
+h2 {
+  font-size: 56px;
+}
+
+/* селектор по id */
+#directors-title {
+  color: blue;
+}
+
+/* селектор по классу */
+.main-text {
+  color: rgb(196, 76, 76);
+}
+
+.big-text {
+  font-size: 60px;
+}
+
+h2.main-text {
+  background-color: rgb(224, 171, 171);
+  font-size: 20px;
+}
+
+/* селектор по атрибуту */
+[href] {
+  font-size: 30px;
+}
+
+/* группировка селекторов */
+h2,
+h1 {
+  background-color: aqua;
+}

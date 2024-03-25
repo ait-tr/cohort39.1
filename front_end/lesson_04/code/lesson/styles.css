@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /*height используется на странице без скролла */
+  /* height: 100%; */
+  /* min-height используется, когда страница может иметь скролл */
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  /* font-size: 12px; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 40px;
+  padding-top: 100px;
+  background-color: aquamarine;
+  font-size: 50px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  /* color: red; */
+  /* border: 4px solid red; */
+}
+
+header {
+  /* фиксированная позиция - position: fixed;*/
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  padding: 30px;
+  background-color: rgb(9, 86, 96);
+  z-index: 2;
+}
+
+.cards-wrapper {
+  /* position: relative; */
+  /* width: 5em; */
+  font-size: 46px;
+  /* width: 10rem; */
+  width: 50vw;
+  height: 700px;
+  padding: 50px;
+  margin: 40px 0 0 30px;
+  background-color: rgb(110, 134, 179);
+}
+
+.card {
+  /* width: 50%; */
+  /* width: 70vw; */
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.card-approach {
+  /* абсолютное позиционирование - position: absolute;*/
+  /* position: absolute; */
+  position: relative;
+  top: 0;
+  right: 0;
+  /* left: 20px; */
+  background-color: rgb(236, 224, 93);
+  border: 2px solid rgb(89, 97, 14);
+  z-index: 1;
+}
+
+.card-team {
+  /* относительное позиционирование - position: relative;*/
+  position: relative;
+  /* top: 0; */
+  left: 100px;
+  bottom: 100px;
+  background-color: rgb(211, 82, 205);
+  border: 2px solid rgb(47, 6, 45);
+}
+
+.card-focus {
+  background-color: rgb(183, 230, 159);
+  border: 2px solid rgb(28, 67, 39);
+}
+
+.card-location {
+  /* липкая позиция - position: sticky;*/
+  position: sticky;
+  top: 100px;
+  background-color: rgb(178, 129, 102);
+  border: 2px solid rgb(97, 64, 20);
+}

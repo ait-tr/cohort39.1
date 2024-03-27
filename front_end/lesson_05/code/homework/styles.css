@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+ width: 100%;
+ height: 100%;
+ /* padding-top: 150px;
+ padding-left: 50px; */
+ /* альтернатива для padding-top и padding-left */
+ padding: 150px 0 0 50px;
+ background-color: rgb(127, 219, 255);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 30px;
+  background-color: rgb(9, 86, 96);
+  z-index: 2;
+}
+
+.user-card {
+  width: 400px;
+  height: 500px;
+  border: 2px;
+  padding: 100px 20px 20px 50px;
+  /* margin-left: 40px; */
+  font-size: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.presentation-karlsen {
+  position: relative;
+  border-style: solid;
+  background-color: rgb(90, 90, 216);
+  border: 0px;
+  z-index: 1;
+}
+
+.presentation-gary {
+  position: relative;
+  left: 350px;
+  bottom: 50px;
+  border-style: dotted;
+  background-color: bisque;
+  z-index: 0;
+}
+
+.presentation-bobbi {
+  position: relative;
+  left: 700px;
+  bottom: 100px;
+  border-style: double;
+  background-color: aquamarine;
+  z-index: 1;
+}
+
+.user-photo {
+  width: 100px;
+  height: 120px;
+}

@@ -1,3 +1,9 @@
 {
-  "code": ["./code/index.html", "./code/styles.css"]
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/index.html",
+    "code/styles.css"
+  ]
 }

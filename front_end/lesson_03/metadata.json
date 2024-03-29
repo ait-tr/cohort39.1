@@ -3,13 +3,12 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
+    "CSS_introduction_box-model.pdf",
     "code/homework/index.html",
     "code/lesson/box_model/index.html",
     "code/lesson/box_model/styles.css",
     "code/lesson/selectors/index.html",
     "code/lesson/selectors/styles.css"
-  ],
-  "video": "",
-  "etc": ""
+  ]
 }
 

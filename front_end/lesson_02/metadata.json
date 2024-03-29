@@ -3,10 +3,9 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
+    "HTML_Containers.pdf",
     "code/homework/index.html",
     "code/lesson/links/index.html",
     "code/lesson/semantic/index.html"
-  ],
-  "video": "",
-  "etc": ""
+  ]
 }

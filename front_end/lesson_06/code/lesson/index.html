@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 6</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <form class="main-form">
+        <h2 class="form-title">Main form</h2>
+        <div class="form-element-container">
+          <label for="name">User Name</label>
+          <input
+            id="name"
+            name="user_name"
+            placeholder="Enter user name"
+            value="Tom"
+          />
+        </div>
+        <div class="form-element-container">
+          <label for="surname">User Surname</label>
+          <input
+            id="surname"
+            name="user_surname"
+            placeholder="Enter user surname"
+            required
+          />
+        </div>
+        <div class="form-element-container">
+          <label for="email">User Email</label>
+          <input
+            id="email"
+            type="email"
+            name="user_email"
+            placeholder="Enter your email"
+          />
+        </div>
+        <div class="form-element-container">
+          <label for="user_gender">User Gender</label>
+          <select id="user_gender" name="gender">
+            <!-- <option value="">--Select gender--</option> -->
+            <option value="male">Male</option>
+            <option value="female" selected>Female</option>
+          </select>
+        </div>
+        <textarea name="letter" placeholder="Enter your letter">
+Hello, </textarea
+        >
+        <button>Send data</button>
+        <button type="reset">Reset data</button>
+      </form>
+    </div>
+  </body>
+</html>

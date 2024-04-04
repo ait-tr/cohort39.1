@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* 1 способ расположения footer в самом низу */
+  /* justify-content: space-between; */
+  width: 100%;
+  min-height: 100%;
+  padding: 150px 0 0 0;
+  background-color: rgb(128, 126, 126);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 40px;
+  background-color: rgb(64, 63, 63);
+  /* можно удалить */
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  gap: 20px;
+}
+
+.company-name {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 40px;
+  color: rgb(231, 231, 229);
+}
+
+/* этот класс у меня привязан к ссылке, не знаю насколько правильно 
+тут указывать margin, но все работает */
+.nav-button {
+  /* margin-left: 20px; */
+  color: rgb(231, 231, 229);
+}
+
+main {
+  /* 2 способ расположения footer в самом низу */
+  flex: 1;
+}
+
+.cards-wrapper {
+  display: flex;
+  /* flex-wrap: wrap; */
+  height: 700px;
+}
+
+.employee-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  background-color: rgb(240, 248, 255);
+  border-radius: 30%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.second-card {
+  order: -1;
+  align-self: flex-end;
+}
+
+.employee-photo {
+  width: 40%;
+  margin-bottom: 20px;
+}
+
+.rating-img {
+  width: 30%;
+  margin-top: 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 50px;
+  background-color: rgb(64, 63, 63);
+}

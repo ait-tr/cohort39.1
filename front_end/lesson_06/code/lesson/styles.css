@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgb(211, 219, 172);
+}
+
+.main-form {
+  display: flex;
+  flex-direction: column;
+  /* 1 способ центрировать main form заголовок */
+  align-items: center;
+  gap: 30px;
+  /* justify-content: center;  */
+  width: 400px;
+  padding: 20px;
+  background: rgb(158, 215, 196);
+  border: 2px solid rgb(27, 82, 62);
+  border-radius: 6px;
+}
+
+.form-element-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 5px;
+  width: 100%;
+}
+
+input, select, textarea {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  border: 2px solid rgb(27, 82, 62);
+  border-radius: 4px;
+}
+
+/* 2 способ центрировать main form заголовок */
+/* .form-title {
+  align-self: center;
+} */
+

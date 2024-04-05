@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  /* grid-template-columns: 3fr 2fr 3fr;
+  grid-template-rows: repeat(2, 2fr) 1fr; */
+  grid-template: repeat(2, 2fr) 1fr / 3fr 2fr 3fr;
+  grid-template: repeat(2, 2fr) 1fr / 3fr 2fr 3fr 2fr;
+  /* grid-template-areas:
+    "pen pen pen"
+    "el el gir"
+    "bfly dol gir"; */
+  /* row-gap: 20px;
+  column-gap: 40px; */
+  /* gap: 30px; */
+  gap: 20px 40px;
+  /* align-items: center;
+  justify-items: center; */
+  width: 100%;
+  min-height: 100%;
+  font-size: 30px;
+  color: white;
+  background-color: aliceblue;
+}
+
+.container > div {
+  /* width: 150px;
+  height: 150px; */
+  padding: 10px;
+}
+
+.penguin {
+  background: rgb(47, 46, 74);
+  grid-column: 1/5;
+  justify-self: center;
+  align-self: center;
+  /* grid-area: pen; */
+}
+
+.elephant {
+  background: rgb(64, 63, 63);
+  /* grid-area: el; */
+  grid-row: 2/4;
+}
+
+.butterfly {
+  background: rgb(76, 22, 48);
+  /* grid-area: bfly; */
+}
+
+.dolphin {
+  background: rgb(21, 73, 85);
+  /* grid-area: dol; */
+}
+
+.giraffe {
+  background: rgb(107, 68, 21);
+  /* grid-area: gir; */
+  grid-column: 2/4;
+  grid-row: 2/4;
+}

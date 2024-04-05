@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 6 home work</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <form class="main-form">
+        <!-- <h2 class="form-title">Contact us</h2> -->
+        <h2>Contact us</h2>
+        <div class="form-element-container">
+          <label for="name">Name*</label>
+          <input
+            name="user_name"
+            value="Kate"
+            id="name"
+            placeholder="Your name"
+            required
+            maxlength="20"
+          />
+        </div>
+        <div class="form-element-container">
+          <label for="phone">Phone*</label>
+          <input
+            name="user_phone"
+            id="phone"
+            placeholder="Your phone number"
+            type="tel"
+            required
+          />
+        </div>
+        <div class="form-element-container">
+          <label for="email">Email</label>
+          <input
+            name="user_email"
+            id="email"
+            type="email"
+            placeholder="Your working email"
+          />
+        </div>
+        <div class="form-element-container">
+          <label for="location">Location</label>
+          <select name="user_location" id="location">
+            <option value="">-Select location-</option>
+            <option value="New York">New York</option>
+            <option value="Los Angeles" selected>Los Angeles</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Boston">Boston</option>
+          </select>
+        </div>
+        <div class="form-element-container">
+          <label for="message">Message*</label>
+          <textarea
+            name="user_message"
+            id="message"
+            placeholder="Your message"
+            required
+          ></textarea>
+        </div>
+        <div class="checkbox-container">
+          <input name="user_agree" type="checkbox" id="checkbox" />
+          <label for="checkbox">I agree</label>
+        </div>
+        <button class="main-button">SEND REQUEST</button>
+        <button class="main-button main-button_red" type="reset">
+          CLEAR FORM
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+header {
+  background-color: rgb(125, 230, 230);
+  padding: 30px;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  font-size: 40px;
+  color:rgb(248, 245, 243);
+  background: rgb(14, 14, 14);
+}
+
+footer {
+  background-color: rgb(101, 117, 182);
+  padding: 30px;
+}
+
+.company-name {
+  font-size: 46px;
+  color: rgb(8, 12, 54);
+}
+
+.active__link {
+  color: rgb(255, 38, 0);
+}

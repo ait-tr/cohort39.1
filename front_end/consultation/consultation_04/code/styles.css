@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  min-height: 100%;
+}
+
+/* анимация через keyframes */
+.animate-element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background: rgb(231, 233, 108);
+  font-size: 26px;
+  /* имя анимации */
+  animation-name: circle-to-square;
+  /* время анимации */
+  animation-duration: 4s;
+  /* количество итераций анимации */
+  animation-iteration-count: infinite;
+  /* направление анимации */
+  animation-direction: alternate;
+  /* правило изменения (ускорения) анимации по времени выполнения */
+  animation-timing-function: linear;
+  /* обобщенное свойство */
+  /* animation: circle-to-square 4s infinite alternate linear; */
+}
+
+/* шаги анимации */
+@keyframes circle-to-square {
+  /* начало анимации (1шаг) */
+  from {
+    width: 200px;
+    height: 200px;
+    background: rgb(231, 233, 108);
+  }
+
+  /* 2-й шаг анимации */
+  50% {
+    width: 600px;
+    height: 600px;
+    background: rgb(108, 233, 175);
+  }
+
+  /* начало анимации (последний шаг) */
+  to {
+    width: 400px;
+    height: 400px;
+    background: rgb(235, 170, 226);
+  }
+}
+
+/* эффекты при наведении hover */
+.cards-hov-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 50px;
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  border: 2px solid rgb(71, 31, 68);
+}
+
+.cards-hov-container:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(212, 72, 199, 1) 24%,
+    rgba(106, 102, 170, 1) 62%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.hov-el {
+  width: 150px;
+  height: 150px;
+  margin: 40px;
+}
+
+.elephant-block {
+  background: rgb(131, 124, 130);
+  border: 2px solid rgb(24, 22, 24);
+}
+
+.penguin-block {
+  background: rgb(185, 198, 212);
+  border: 2px solid rgb(24, 21, 71);
+}
+
+.giraffe-block {
+  background: rgb(202, 171, 104);
+  border: 2px solid rgb(117, 94, 18);
+}
+
+.hov-el:hover {
+  width: 170px;
+  height: 170px;
+  margin: 30px;
+}
+
+/* стилизация видео */
+.video-element {
+  width: 60%;
+  /* height: 300px; */
+  border: 2px solid rgb(48, 40, 40);
+  border-radius: 20px;
+}

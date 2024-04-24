@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 15</title>
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>Форма расчёта идеального веса</h1>
+      <div class="card">
+        <form id="form">
+          <label for="person-height">Рост, см*</label>
+          <input
+            class="height-input"
+            name="height"
+            id="person-height"
+            type="number"
+            placeholder="Введите свой рост"
+            required
+          />
+          <label for="person-gender">Выберете пол*</label>
+          <select class="gender-select" name="gender" id="person-gender" required>
+            <option value="male">Мужской</option>
+            <option value="female">Женский</option>
+          </select>
+          <!-- 1 вариант - кнопка с типом 'button' -->
+          <!-- <button class="result-button" type="button">Рассчитать</button> -->
+          <!-- 2 вариант - кнопка с типом 'submit' -->
+          <button class="result-button">Рассчитать</button>
+          <div class="result">Здесь будет результат</div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
